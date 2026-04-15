@@ -2,9 +2,9 @@
 
 ## Current State
 
-**Template Status**: ✅ Ready for development
+**Template Status**: ✅ Extended with embedded firmware assets
 
-The template is a clean Next.js 16 starter with TypeScript and Tailwind CSS 4. It's ready for AI-assisted expansion to build any type of application.
+The repository now contains the original Next.js starter plus a local Arduino/Matter firmware workspace for ESP32 sensor development.
 
 ## Recently Completed
 
@@ -14,6 +14,8 @@ The template is a clean Next.js 16 starter with TypeScript and Tailwind CSS 4. I
 - [x] ESLint configuration
 - [x] Memory bank documentation
 - [x] Recipe system for common features
+- [x] Added ESP32 Matter firmware for AM2320 and DS18B20 sensors
+- [x] Saved required Arduino sensor libraries locally in `third_party/`
 
 ## Current Structure
 
@@ -23,14 +25,16 @@ The template is a clean Next.js 16 starter with TypeScript and Tailwind CSS 4. I
 | `src/app/layout.tsx` | Root layout | ✅ Ready |
 | `src/app/globals.css` | Global styles | ✅ Ready |
 | `.kilocode/` | AI context & recipes | ✅ Ready |
+| `firmware/esp32-matter-sensors/` | ESP32 Matter sketch and setup guide | ✅ Ready |
+| `third_party/` | Vendored Arduino libraries for firmware build | ✅ Ready |
 
 ## Current Focus
 
-The template is ready. Next steps depend on user requirements:
+Current focus areas in the repo:
 
-1. What type of application to build
-2. What features are needed
-3. Design/branding preferences
+1. Next.js application work when requested
+2. ESP32 firmware iteration for Matter-based sensors
+3. Keeping local library dependencies versioned inside the project
 
 ## Quick Start Guide
 
@@ -85,3 +89,4 @@ export async function GET() {
 | Date | Changes |
 |------|---------|
 | Initial | Template created with base setup |
+| 2026-04-15 | Added ESP32 Matter firmware for AM2320 + DS18B20 with dual Wi-Fi credentials and local vendored Arduino libraries |
