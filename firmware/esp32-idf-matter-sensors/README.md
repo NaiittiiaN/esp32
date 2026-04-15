@@ -69,10 +69,39 @@ idf.py build
 
 ## Включение реального Matter
 
-Добавить локально совместимый `ESP-Matter` компонент в:
+### Опция 1: Использование ESP-IDF Component Registry (рекомендуется для стабильной версии)
 
-```text
-firmware/esp32-idf-matter-sensors/components/esp_matter/
+```bash
+cd firmware/esp32-idf-matter-sensors
+idf.py add-dependency "espressif/esp_matter^1.4.2~1"
+```
+
+Это загрузит esp_matter v1.4.2~1 в директорию `components/`.
+
+### Опция 2: Полный репозиторий ESP-Matter (для v1.5)
+
+ДляMatter v1.5 используйте ветку `release/v1.5`:
+
+```bash
+git clone --branch release/v1.5 --depth 1 \
+    https://github.com/espressif/esp-matter.git \
+    components/esp_matter_temp
+cd components/esp_matter_temp
+git submodule update --init --depth 1
+# Переместите esp_matter в нужное место
+mv components/esp_matter components/esp_matter_full
+# Удалите временную директорию
+rm -rf components/esp_matter_temp
+```
+
+### После добавления компонента
+
+Очистите и пересоберите проект:
+
+```bash
+idf.py fullclean
+idf.py set-target esp32
+idf.py build
 ```
 
 После этого проект начнет использовать реальную реализацию вместо stub-слоя.

@@ -19,6 +19,7 @@ The repository now contains the original Next.js starter plus two ESP32 firmware
 - [x] Added ESP-IDF firmware project for ESP32-WROOM DevKitV1 with local AM2320 and DS18B20 drivers
 - [x] Added local diagnostics/calibration web UI with JSON API and NVS-backed calibration offsets
 - [x] Added Wi-Fi and Matter state logging with stub-compatible Matter bridge for offline local component vendoring
+- [x] Added esp-matter integration guide (v1.5 branch / v1.4.2 component) with setup instructions
 
 ## Current Structure
 
@@ -96,3 +97,4 @@ export async function GET() {
 | Initial | Template created with base setup |
 | 2026-04-15 | Added ESP32 Matter firmware for AM2320 + DS18B20 with dual Wi-Fi credentials and local vendored Arduino libraries |
 | 2026-04-15 | Added `firmware/esp32-idf-matter-sensors/` with ESP-IDF-native sensor drivers, Wi-Fi fallback manager, web diagnostics/calibration UI, log ring buffer, and conditional Matter bridge stub awaiting local `esp_matter` sources |
+| 2026-04-15 | Added esp-matter v1.5 integration instructions (component registry v1.4.2~1 available, full v1.5 from branch) |

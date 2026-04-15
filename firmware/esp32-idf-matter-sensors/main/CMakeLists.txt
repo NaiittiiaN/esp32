@@ -23,4 +23,5 @@ idf_component_register(
         json
         am2320
         ds18b20
+        esp_matter
 )
