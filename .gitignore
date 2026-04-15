@@ -20,6 +20,12 @@
 # production
 /build
 
+# esp-idf
+firmware/esp32-idf-matter-sensors/build/
+firmware/esp32-idf-matter-sensors/sdkconfig
+firmware/esp32-idf-matter-sensors/sdkconfig.old
+firmware/esp32-idf-matter-sensors/dependencies.lock
+
 # misc
 .DS_Store
 *.pem

@@ -2,9 +2,9 @@
 
 ## Current State
 
-**Template Status**: ✅ Extended with embedded firmware assets
+**Template Status**: ✅ Extended with embedded firmware assets and ESP-IDF firmware workspace
 
-The repository now contains the original Next.js starter plus a local Arduino/Matter firmware workspace for ESP32 sensor development.
+The repository now contains the original Next.js starter plus two ESP32 firmware workspaces: an existing Arduino/Matter sketch and a new ESP-IDF-native project for sensor development, diagnostics, and future local ESP-Matter integration.
 
 ## Recently Completed
 
@@ -16,6 +16,9 @@ The repository now contains the original Next.js starter plus a local Arduino/Ma
 - [x] Recipe system for common features
 - [x] Added ESP32 Matter firmware for AM2320 and DS18B20 sensors
 - [x] Saved required Arduino sensor libraries locally in `third_party/`
+- [x] Added ESP-IDF firmware project for ESP32-WROOM DevKitV1 with local AM2320 and DS18B20 drivers
+- [x] Added local diagnostics/calibration web UI with JSON API and NVS-backed calibration offsets
+- [x] Added Wi-Fi and Matter state logging with stub-compatible Matter bridge for offline local component vendoring
 
 ## Current Structure
 
@@ -26,6 +29,7 @@ The repository now contains the original Next.js starter plus a local Arduino/Ma
 | `src/app/globals.css` | Global styles | ✅ Ready |
 | `.kilocode/` | AI context & recipes | ✅ Ready |
 | `firmware/esp32-matter-sensors/` | ESP32 Matter sketch and setup guide | ✅ Ready |
+| `firmware/esp32-idf-matter-sensors/` | ESP-IDF-native firmware with local drivers, web UI, and Matter bridge stub | ✅ Ready |
 | `third_party/` | Vendored Arduino libraries for firmware build | ✅ Ready |
 
 ## Current Focus
@@ -33,8 +37,9 @@ The repository now contains the original Next.js starter plus a local Arduino/Ma
 Current focus areas in the repo:
 
 1. Next.js application work when requested
-2. ESP32 firmware iteration for Matter-based sensors
-3. Keeping local library dependencies versioned inside the project
+2. ESP32 firmware iteration for Matter-based sensors on Arduino and ESP-IDF stacks
+3. Keeping local library dependencies and drivers versioned inside the project
+4. Preparing local ESP-Matter vendoring path for full Matter commissioning support
 
 ## Quick Start Guide
 
@@ -90,3 +95,4 @@ export async function GET() {
 |------|---------|
 | Initial | Template created with base setup |
 | 2026-04-15 | Added ESP32 Matter firmware for AM2320 + DS18B20 with dual Wi-Fi credentials and local vendored Arduino libraries |
+| 2026-04-15 | Added `firmware/esp32-idf-matter-sensors/` with ESP-IDF-native sensor drivers, Wi-Fi fallback manager, web diagnostics/calibration UI, log ring buffer, and conditional Matter bridge stub awaiting local `esp_matter` sources |

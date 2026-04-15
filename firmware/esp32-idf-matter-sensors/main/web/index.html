@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ESP32 Sensor Diagnostics</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero">
+        <p class="eyebrow">ESP-IDF Sensor Console</p>
+        <h1>Диагностика и калибровка AM2320 / DS18B20</h1>
+        <p class="lead">Локальный интерфейс контроля Wi-Fi, Matter и измерений на ESP32-WROOM DevKitV1.</p>
+      </section>
+
+      <section class="grid">
+        <article class="panel" id="status-panel">
+          <h2>Состояние</h2>
+          <pre id="status-output">Загрузка...</pre>
+        </article>
+
+        <article class="panel">
+          <h2>Калибровка</h2>
+          <form id="calibration-form">
+            <label>DS18B20 temp offset, C<input type="number" step="0.1" name="ds18b20TempOffsetC"></label>
+            <label>AM2320 temp offset, C<input type="number" step="0.1" name="am2320TempOffsetC"></label>
+            <label>AM2320 humidity offset, %<input type="number" step="0.1" name="am2320HumidityOffsetPct"></label>
+            <button type="submit">Сохранить</button>
+          </form>
+          <button id="poll-button" class="secondary">Считать датчики сейчас</button>
+        </article>
+
+        <article class="panel panel-wide">
+          <h2>Журнал</h2>
+          <pre id="logs-output">Загрузка...</pre>
+        </article>
+      </section>
+    </main>
+    <script src="/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,129 @@
+:root {
+  --bg: #f4efe6;
+  --panel: rgba(255, 252, 247, 0.88);
+  --text: #1f2a2a;
+  --muted: #5b6b68;
+  --line: rgba(31, 42, 42, 0.12);
+  --accent: #c96d42;
+  --accent-dark: #7f3d1f;
+  --shadow: 0 24px 80px rgba(70, 48, 36, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--text);
+  font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(201, 109, 66, 0.18), transparent 28%),
+    linear-gradient(135deg, #efe4d2, #f7f2eb 45%, #ebe5db);
+}
+
+.shell {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 32px 20px 48px;
+}
+
+.hero {
+  margin-bottom: 24px;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: var(--accent-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.75rem;
+}
+
+h1,
+h2 {
+  font-family: "Space Grotesk", "Segoe UI", sans-serif;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3.75rem);
+  line-height: 0.96;
+}
+
+.lead {
+  max-width: 720px;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 18px;
+}
+
+.panel {
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: var(--panel);
+  backdrop-filter: blur(14px);
+  box-shadow: var(--shadow);
+}
+
+.panel-wide {
+  grid-column: 1 / -1;
+}
+
+pre {
+  overflow: auto;
+  padding: 14px;
+  border-radius: 16px;
+  background: #1e2424;
+  color: #f8f1e8;
+  font-size: 0.82rem;
+}
+
+form {
+  display: grid;
+  gap: 12px;
+}
+
+label {
+  display: grid;
+  gap: 6px;
+  color: var(--muted);
+}
+
+input,
+button {
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  padding: 12px 14px;
+  font: inherit;
+}
+
+button {
+  border: none;
+  color: #fff8f0;
+  background: linear-gradient(135deg, var(--accent), #a7542d);
+  cursor: pointer;
+}
+
+button.secondary {
+  margin-top: 14px;
+  color: var(--text);
+  background: #efe0d1;
+}
+
+@media (max-width: 640px) {
+  .shell {
+    padding: 20px 14px 32px;
+  }
+
+  .panel {
+    border-radius: 18px;
+  }
+}

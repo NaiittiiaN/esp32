@@ -1,0 +1,26 @@
+idf_component_register(
+    SRCS
+        "app_main.cpp"
+        "app_config.cpp"
+        "app_persist.c"
+        "sensor_service.c"
+        "wifi_manager.c"
+        "state_log.c"
+        "diagnostics_http.c"
+        "matter_bridge.cpp"
+    INCLUDE_DIRS "."
+    EMBED_FILES
+        "web/index.html"
+        "web/app.js"
+        "web/styles.css"
+    REQUIRES
+        esp_http_server
+        esp_wifi
+        esp_event
+        esp_netif
+        nvs_flash
+        mdns
+        json
+        am2320
+        ds18b20
+)
